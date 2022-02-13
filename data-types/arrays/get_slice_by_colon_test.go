@@ -14,6 +14,15 @@ func TestArrDoXAfterColon(t *testing.T) {
 	}
 }
 
+func TestArrDoXBeforeColon(t *testing.T) {
+	var arrToProcess = []int{0, 1, 2, 3, 4}
+	var arrExpect = []int{3, 4}
+	arrXAfterColon := arrDoXBeforeColon(&arrToProcess, 3)
+	if !testEq(arrExpect, arrXAfterColon, true) {
+		t.Error()
+	}
+}
+
 func testEq(a, b []int, doPrintDiff bool) bool {
 	if len(a) != len(b) {
 		if doPrintDiff {
