@@ -3,22 +3,39 @@ package main
 import "fmt"
 
 func main() {
-	// ARRAYS
+	// ARRAYS -------------------------------------------------------
 	// - fixed length
 
-	var array0 = [2]string{} // length 2 / initialized by type zeros '' (e.g. empty string in this case)
+	array0 := [2]string{} // length 2 / initialized by type zeros '' (e.g. empty string in this case)
 	printStrLen2ArrByPointer(&array0)
 
-	var array1 = [...]int{0, 1, 2, 3} // length 4, cause 4 elements / array cause [...]
-	printIntLen4ArrByValue(array1)    //fmt.Printf("arr: %v\n", array1)
+	array1 := [...]int{0, 1, 2, 3} // length 4, cause 4 elements / array cause [...]
+	printIntLen4ArrByValue(array1) //fmt.Printf("arr: %v\n", array1)
 
-	// iterate through
+	// iterate through array
 	for i, el := range array0 {
 		fmt.Printf("i=%v el='%v'\n", i, el)
 	}
+	for i := 0; i < len(array1); i++ {
+		fmt.Printf("i=%v el='%v'\n", i, array1[i])
+	}
 
-	// SLICES
+	// SLICES -------------------------------------------------------
 
+	slice0 := []int{1, 2, 3} // ? initialized directly, ? so it is a slice literal
+
+	slice1 := make([]float32, 2, 4) // TODO what about 2 arguments version of make()?
+
+	// TODO slice2 - create it after array (create array...???)
+
+	// iterate through slice
+	for i, el := range slice0 {
+		fmt.Printf("i=%v el='%v'\n", i, el)
+	}
+
+	for i := 0; i < len(slice1); i++ {
+		fmt.Printf("i=%v el='%v'\n", i, slice1[i])
+	}
 }
 
 // how to pass array to func - BY POINTER
