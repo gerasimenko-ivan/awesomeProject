@@ -10,3 +10,6 @@ func (PublicAgent) SayIAmPublicFunc() string {
 	fmt.Println(iWantToSay)
 	return iWantToSay
 }
+
+// TODO add more examples of public functions e.g.:
+// func (a A) Foo() {}
