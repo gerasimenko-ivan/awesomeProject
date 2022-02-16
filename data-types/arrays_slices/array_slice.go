@@ -13,11 +13,21 @@ func main() {
 	printIntLen4ArrByValue(array1) //fmt.Printf("arr: %v\n", array1)
 
 	// iterate through array
+	fmt.Printf("-- for range\n")
 	for i, el := range array0 {
 		fmt.Printf("i=%v el='%v'\n", i, el)
 	}
+
+	fmt.Printf("-- for three-component\n")
 	for i := 0; i < len(array1); i++ {
 		fmt.Printf("i=%v el='%v'\n", i, array1[i])
+	}
+
+	fmt.Printf("-- for only-condition\n")
+	i := 0
+	for i < len(array1) {
+		fmt.Printf("i=%v el='%v'\n", i, array1[i])
+		i++
 	}
 
 	// SLICES -------------------------------------------------------
