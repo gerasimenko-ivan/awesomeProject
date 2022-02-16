@@ -31,8 +31,10 @@ func main() {
 	}
 
 	// SLICES -------------------------------------------------------
-	// length - ???
-	// capacity - ???
+	// []smt    - a pointer to the underlying array
+	// length   - number of elements in the slice
+	// capacity - length of the underlying array, which is also the
+	//            maximum length the slice can take (until it grows)
 
 	slice0 := []int{1, 2, 3} // ? initialized directly, ? so it is a slice literal
 
@@ -60,13 +62,23 @@ func main() {
 
 	// let's figure out what is length & capacity by testing append()
 	fmt.Printf("Check length VS capacity in slice\n")
-
-	slice3 := make([]int, 2, 3)
+	slice3 := make([]int, 3, 5)
 	slice3[0] = 0
 	slice3[1] = 1
+	slice3[2] = 2
 	for i, el := range slice3 {
 		fmt.Printf("i=%v, el=%v\n", i, el)
 	}
+
+	fmt.Printf("append 3\n")
+	slice3 = append(slice3, 3)
+	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3))
+	fmt.Printf("append 4\n")
+	slice3 = append(slice3, 4)
+	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3))
+	fmt.Printf("append 5\n")
+	slice3 = append(slice3, 5)
+	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3))
 }
 
 // how to pass array to func - BY POINTER
