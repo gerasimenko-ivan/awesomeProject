@@ -15,36 +15,57 @@ func main() {
 	// iterate through array
 	fmt.Printf("-- for range\n")
 	for i, el := range array0 {
-		fmt.Printf("i=%v el='%v'\n", i, el)
+		fmt.Printf("j=%v el='%v'\n", i, el)
 	}
 
 	fmt.Printf("-- for three-component\n")
 	for i := 0; i < len(array1); i++ {
-		fmt.Printf("i=%v el='%v'\n", i, array1[i])
+		fmt.Printf("j=%v el='%v'\n", i, array1[i])
 	}
 
 	fmt.Printf("-- for only-condition\n")
 	i := 0
 	for i < len(array1) {
-		fmt.Printf("i=%v el='%v'\n", i, array1[i])
+		fmt.Printf("j=%v el='%v'\n", i, array1[i])
 		i++
 	}
 
 	// SLICES -------------------------------------------------------
+	// length - ???
+	// capacity - ???
 
 	slice0 := []int{1, 2, 3} // ? initialized directly, ? so it is a slice literal
 
-	slice1 := make([]float32, 2, 4) // TODO what about 2 arguments version of make()?
+	slice1 := make([]float32, 2, 4) // args: array, length, capacity
 
-	// TODO slice2 - create it after array (create array...???)
+	slice2 := make([]string, 3) // args: array, length-capacity
 
 	// iterate through slice
+	fmt.Printf("-- for range\n")
 	for i, el := range slice0 {
-		fmt.Printf("i=%v el='%v'\n", i, el)
+		fmt.Printf("j=%v el='%v'\n", i, el)
 	}
 
+	fmt.Printf("-- for three-component\n")
 	for i := 0; i < len(slice1); i++ {
-		fmt.Printf("i=%v el='%v'\n", i, slice1[i])
+		fmt.Printf("j=%v el='%v'\n", i, slice1[i])
+	}
+
+	fmt.Printf("-- for only-condition\n")
+	j := 0
+	for j < len(slice2) {
+		fmt.Printf("j=%v el='%v'\n", j, slice2[2])
+		j++
+	}
+
+	// let's figure out what is length & capacity by testing append()
+	fmt.Printf("Check length VS capacity in slice\n")
+
+	slice3 := make([]int, 2, 3)
+	slice3[0] = 0
+	slice3[1] = 1
+	for i, el := range slice3 {
+		fmt.Printf("i=%v, el=%v\n", i, el)
 	}
 }
 
