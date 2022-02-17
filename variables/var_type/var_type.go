@@ -3,7 +3,7 @@ package main
 func main() {
 	// TYPE keyword
 
-	type Celcius float32 // Celcius is now alias for float32
+	type Celcius float32 // Celcius is now alias for float32 / alias [Эйлиэс]
 	var tempreture Celcius = 13.5
 	tempreture += 0
 
