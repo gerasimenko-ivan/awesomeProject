@@ -72,13 +72,15 @@ func main() {
 
 	fmt.Printf("append 3\n")
 	slice3 = append(slice3, 3)
-	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3))
+	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3)) // len 4 - cap 5
 	fmt.Printf("append 4\n")
 	slice3 = append(slice3, 4)
-	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3))
+	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3)) // len 5 - cap 5
 	fmt.Printf("append 5\n")
+
+	// another underlying array will be added to hold another element
 	slice3 = append(slice3, 5)
-	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3))
+	fmt.Printf("len=%v cap=%v\n", len(slice3), cap(slice3)) // len 6 - cap 10
 }
 
 // how to pass array to func - BY POINTER
